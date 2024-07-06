@@ -10,7 +10,7 @@ export type Conversation = {
     groupImage?: string;
     groupName?: string;
     admin?: Id<"users">;
-    isOline?: boolean;
+    isOnline?: boolean;
     lastMessage?: {
         _id: Id<"messages">;
         conversation: Id<"conversations">;
