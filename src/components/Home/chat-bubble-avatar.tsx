@@ -5,9 +5,10 @@ type ChatBubbleAvatarProps = {
     message: IMessage;
     isMember: boolean;
     isGroup: boolean | undefined;
+    fromAi: boolean
 }
-const ChatBubbleAvatar = ({ isGroup, isMember, message }: ChatBubbleAvatarProps) => {
-    if (!isGroup) return null
+const ChatBubbleAvatar = ({ isGroup, isMember, message, fromAi }: ChatBubbleAvatarProps) => {
+    if (!isGroup && !fromAi) return null
     return (
 
         <Avatar className="overflow-visible relative">

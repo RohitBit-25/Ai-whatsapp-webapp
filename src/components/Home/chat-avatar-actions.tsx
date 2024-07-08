@@ -74,4 +74,4 @@ const ChatAvatarActions = ({ me, message }: ChatAvatarActionsProps) => {
         </div>
     );
 };
-export default ChatAvatarActions;
+export default ChatAvatarActions; 
