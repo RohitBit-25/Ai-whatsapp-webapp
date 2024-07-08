@@ -54,13 +54,13 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
                         isGroup={isGroup}
                         isMember={isMember}
                         message={message}
-                        fromAi={fromAI}
+                        fromAI={fromAI}
                     />
 
                     <div className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md relative ${bgClass}`}>
                         {!fromAI && <OtherMessageIndicator />}
-                        {fromAI && <Bot size={16} className="absolute bottom=[2px] left-2" />}
-                        {isGroup && <ChatAvatarActions
+                        {fromAI && <Bot size={16} className="absolute bottom-[2px] left-2" />}
+                        {<ChatAvatarActions
                             message={message}
                             me={me}
                         />}
@@ -76,21 +76,23 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
         )
     }
 
-    return <>
-        <DateIndicator message={message} previousMessage={previousMessage} />
-        <div className="flex gap-1 w-2/3 ml-auto">
+    return (
+        <>
+            <DateIndicator message={message} previousMessage={previousMessage} />
+            <div className="flex gap-1 w-2/3 ml-auto">
 
-            <div className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md ml-auto relative ${bgClass}`}>
-                <SelfMessageIndicator />
-                {renderMessageContent()}
+                <div className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md ml-auto relative ${bgClass}`}>
+                    <SelfMessageIndicator />
+                    {renderMessageContent()}
+                    {open && <ImageDialog src={message.content} open={open} onClose={() => setOpen(false)} />}
+                    <MessageTime
+                        time={time} fromMe={fromMe}
+                    />
+                </div>
 
-                <MessageTime
-                    time={time} fromMe={fromMe}
-                />
             </div>
-
-        </div>
-    </>
+        </>
+    )
 
 
 

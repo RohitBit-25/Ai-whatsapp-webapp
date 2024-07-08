@@ -18,12 +18,12 @@ export const chat = action ({
             model:"gpt-3.5-turbo",
             messages: [
                 {
-                    "role":"system",
+                    role:"system",
                     content:"You are a bot in a group chat respond to question with 1 sentense answers"
                 },
                 {
                     role:"user",
-                    content:args.messageBody
+                    content:args.messageBody,
                 }
             ]
         })
@@ -33,6 +33,29 @@ export const chat = action ({
         await ctx.runMutation(api.messages.sendChatGPTMessage,{
             content:messageContent ?? "I am sorry, I don't understand.",
             conversation:args.conversation,
+            messageType: "text",
+        })
+    }
+});
+
+export const dall_e = action ({
+    args: {
+        conversation: v.id("conversations"),
+        messageBody: v.string(),
+    },
+    handler: async (ctx,args) => {
+        const res = await openai.images.generate({
+            model:"dall-e-3",
+            prompt: args.messageBody,
+            n:1,
+            size:"1024x1024",
+        })
+
+        const imageUrl = res.data[0].url;
+        await ctx.runMutation(api.messages.sendChatGPTMessage,{
+            content:imageUrl ?? "/poopenai.png",
+            conversation:args.conversation,
+            messageType:"image",
         })
     }
 })
