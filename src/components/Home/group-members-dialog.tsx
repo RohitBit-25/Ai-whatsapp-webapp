@@ -14,7 +14,7 @@ import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 
 type GroupMembersDialogProps = {
-    selectedConversation: Conversation
+    selectedConversation: Conversation;
 }
 
 const GroupMembersDialog = ({ selectedConversation }: GroupMembersDialogProps) => {
@@ -46,7 +46,8 @@ const GroupMembersDialog = ({ selectedConversation }: GroupMembersDialogProps) =
                                             <h3 className='text-md font-medium'>
                                                 {user.name || user.email.split("@")[0]}
                                             </h3>
-                                            {user._id === selectedConversation.admin && <Crown size={16} className='text-yellow-400' />}
+                                            {user._id === selectedConversation.admin && (
+                                                <Crown size={16} className='text-yellow-400' />)}
                                         </div>
                                     </div>
                                 </div>

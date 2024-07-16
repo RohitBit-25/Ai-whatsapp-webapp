@@ -29,6 +29,8 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
     const fromMe = message.sender?._id === me._id;
     const fromAI = message.sender?.name === "ChatGPT";
     const bgClass = fromMe ? "bg-green-chat" : !fromAI ? "bg-white dark: bg-gray-primary" : "bg-blue-500 text-white";
+
+    console.log(message.sender)
     const [open, setOpen] = useState(false);
 
     const renderMessageContent = () => {
@@ -43,59 +45,39 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
                 return null;
         }
     };
-
     if (!fromMe) {
         return (
             <>
                 <DateIndicator message={message} previousMessage={previousMessage} />
-
-                <div className="flex gap-1 w-2/3 ">
-                    <ChatBubbleAvatar
-                        isGroup={isGroup}
-                        isMember={isMember}
-                        message={message}
-                        fromAI={fromAI}
-                    />
-
+                <div className='flex gap-1 w-2/3'>
+                    <ChatBubbleAvatar isGroup={isGroup} isMember={isMember} message={message} fromAI={fromAI} />
                     <div className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md relative ${bgClass}`}>
                         {!fromAI && <OtherMessageIndicator />}
-                        {fromAI && <Bot size={16} className="absolute bottom-[2px] left-2" />}
-                        {<ChatAvatarActions
-                            message={message}
-                            me={me}
-                        />}
+                        {fromAI && <Bot size={16} className='absolute bottom-[2px] left-2' />}
+                        {<ChatAvatarActions message={message} me={me} />}
                         {renderMessageContent()}
-
-                        <MessageTime
-                            time={time} fromMe={fromMe}
-                        />
+                        {open && <ImageDialog src={message.content} open={open} onClose={() => setOpen(false)} />}
+                        <MessageTime time={time} fromMe={fromMe} />
                     </div>
-
                 </div>
             </>
-        )
+        );
     }
 
     return (
         <>
             <DateIndicator message={message} previousMessage={previousMessage} />
-            <div className="flex gap-1 w-2/3 ml-auto">
 
-                <div className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md ml-auto relative ${bgClass}`}>
+            <div className='flex gap-1 w-2/3 ml-auto'>
+                <div className={`flex  z-20 max-w-fit px-2 pt-1 rounded-md shadow-md ml-auto relative ${bgClass}`}>
                     <SelfMessageIndicator />
                     {renderMessageContent()}
                     {open && <ImageDialog src={message.content} open={open} onClose={() => setOpen(false)} />}
-                    <MessageTime
-                        time={time} fromMe={fromMe}
-                    />
+                    <MessageTime time={time} fromMe={fromMe} />
                 </div>
-
             </div>
         </>
-    )
-
-
-
+    );
 };
 export default ChatBubble;
 

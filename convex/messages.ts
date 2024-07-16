@@ -24,7 +24,7 @@ export const sendTextMessage = mutation({
         }
 
         const conversation = await ctx.db.query("conversations")
-        .filter(q => q.eq (q.field("_id"), args.conversation)).first();
+        .filter((q) => q.eq (q.field("_id"), args.conversation)).first();
         
         if(!conversation) {
             throw new ConvexError("Conversation not found")
@@ -44,7 +44,7 @@ export const sendTextMessage = mutation({
         // todo add @chatgpt
         if(args.content.startsWith("@gpt")){
             //Schedule the chat action to run immediately
-            await ctx.scheduler.runAfter(0,api.openai.chat, {
+            await ctx.scheduler.runAfter(0, api.openai.chat, {
                 messageBody: args.content,
                 conversation:args.conversation,
             })

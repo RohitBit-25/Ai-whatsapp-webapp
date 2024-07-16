@@ -1,11 +1,11 @@
 import { v } from 'convex/values';
-import OpenAi from 'openai';
+import OpenAI from 'openai'
 import { action } from './_generated/server';
 import { api } from './_generated/api';
 
 const apiKey = process.env.OPENAI_API_KEY;
 
-const openai = new OpenAi({apiKey});
+const openai = new OpenAI({apiKey});
 
 export const chat = action ({
     args:{
@@ -19,7 +19,7 @@ export const chat = action ({
             messages: [
                 {
                     role:"system",
-                    content:"You are a bot in a group chat respond to question with 1 sentense answers"
+                    content:"You are a terse bot in a group chat responding to questions with 1-sentence answers"
                 },
                 {
                     role:"user",
@@ -31,7 +31,7 @@ export const chat = action ({
         const messageContent= res.choices[0].message.content
 
         await ctx.runMutation(api.messages.sendChatGPTMessage,{
-            content:messageContent ?? "I am sorry, I don't understand.",
+            content: messageContent ?? "I am sorry, I don't understand.",
             conversation:args.conversation,
             messageType: "text",
         })
