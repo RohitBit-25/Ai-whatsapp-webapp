@@ -28,7 +28,7 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
     const isGroup = selectedConversation?.isGroup;
     const fromMe = message.sender?._id === me._id;
     const fromAI = message.sender?.name === "ChatGPT";
-    const bgClass = fromMe ? "bg-green-chat" : !fromAI ? "bg-white dark: bg-gray-primary" : "bg-blue-500 text-white";
+    const bgClass = fromMe ? "bg-green-chat" : !fromAI ? "bg-gray dark: bg-gray-primary" : "bg-blue-500 text-white";
 
 
     const [open, setOpen] = useState(false);
@@ -125,7 +125,7 @@ const MessageTime = ({ time, fromMe }: { time: string; fromMe: boolean }) => {
 };
 
 const OtherMessageIndicator = () => (
-    <div className='absolute bg-white dark:bg-gray-primary top-0 -left-[4px] w-3 h-3 rounded-bl-full' />
+    <div className='absolute bg-gray dark:bg-gray-primary top-0 -left-[4px] w-3 h-3 rounded-bl-full' />
 );
 
 const SelfMessageIndicator = () => (
