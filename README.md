@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WhatsApp Clone
 
-## Getting Started
+A full-featured WhatsApp clone built with the latest web technologies, featuring real-time messaging, AI chat integration, and video calling capabilities.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![Convex](https://img.shields.io/badge/Convex-Backend-orange)
+![Clerk](https://img.shields.io/badge/Clerk-Auth-blue)
+![ZegoCloud](https://img.shields.io/badge/ZegoCloud-Video_Call-green)
+![OpenAI](https://img.shields.io/badge/OpenAI-AI-412991)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
+
+## 🚀 Key Features
+
+*   **Real-time Messaging**: Instant text, image, and video messages powered by **Convex**.
+*   **AI Integration**:
+    *   **Chatbot**: Interact with a GPT-3.5 powered bot in chats.
+    *   **Image Generation**: Generate images using DALL-E 3 directly within the chat.
+*   **Video & Voice Calls**: High-quality video and voice calls using **ZegoCloud**.
+*   **Authentication**: Secure user authentication via **Clerk**.
+*   **Online Status**: Real-time user presence indicators.
+*   **Group Chats**: Create and manage group conversations.
+*   **Responsive UI**: Modern interface built with **Shadcn UI** and **Tailwind CSS**.
+*   **Themes**: Light and dark mode support.
+
+## 🛠️ Tech Stack
+
+*   **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+*   **Backend & DB**: [Convex](https://www.convex.dev/)
+*   **Auth**: [Clerk](https://clerk.com/)
+*   **Video Calls**: [ZegoCloud](https://www.zegocloud.com/)
+*   **AI**: [OpenAI API](https://openai.com/) (GPT-3.5 & DALL-E)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
+*   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+
+## ⚙️ Prerequisites
+
+*   [Node.js](https://nodejs.org/) (v18 or later)
+*   npm, yarn, pnpm, or bun
+
+## 🏁 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/whatsapp-clone.git
+cd whatsapp
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Setup Environment Variables
+
+Create a `.env.local` file in the root directory and populate it with the following keys:
+
+```env
+# Convex
+CONVEX_DEPLOYMENT=
+NEXT_PUBLIC_CONVEX_URL=
+
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# OpenAI
+OPENAI_API_KEY=
+
+# ZegoCloud
+ZEGO_APP_ID=
+ZEGO_SERVER_SECRET=
+```
+
+### 4. Start Convex
+
+Run the Convex development server to sync your schema and functions.
+
+```bash
+npx convex dev
+```
+
+### 5. Run the Application
+
+In a new terminal window, start the Next.js development server.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to use the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+*   `/src/app`: Next.js App Router pages and layouts.
+*   `/src/components`: Reusable UI components.
+*   `/convex`: Backend functions (API), schema, and actions (OpenAI).
+*   `/src/providers`: Application providers (Theme, ConvexClient).
+*   `/src/store`: Global state management with Zustand.
 
-## Learn More
+## 🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
