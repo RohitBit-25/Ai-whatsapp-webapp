@@ -17,8 +17,8 @@
 		--left-panel: 100, 100%, 100%;
 		--chat-hover: 180, 5%, 96%;
 
-		--green-primary: 167, 100%, 33%;
-		--green-chat: 111, 91%, 91%;
+		--brand-primary: 180, 100%, 50%;
+		--brand-chat: 215, 28%, 17%;
 	
 
 		--card: 0 0% 100%;
@@ -50,20 +50,20 @@
 	}
 
 	.dark {
-		--background: 202, 31%, 7%; 
-		--foreground: 210 40% 98%;
+		--background: 222, 47%, 7%; 
+		--foreground: 210, 40%, 98%;
 
-		--container: 202, 31%, 7%;
+		--container: 222, 47%, 7%;
 
-		--gray-primary: 202, 23%, 16%;
-		--gray-secondary: 202, 22%, 17%;
+		--gray-primary: 222, 47%, 10%;
+		--gray-secondary: 222, 47%, 11%;
 
-		--left-panel: 203, 32%, 10%;
-		--chat-hover: 202, 23%, 16%;
+		--left-panel: 222, 47%, 9%;
+		--chat-hover: 222, 47%, 12%;
 
-		--green-primary: 167, 100%, 33%;
-		--green-secondary: 165, 100%, 39%;
-		--green-chat: 169, 100%, 18%;
+        --brand-primary: 180, 100%, 50%;
+		--brand-secondary: 180, 100%, 39%;
+		--brand-chat: 215, 28%, 17%;
 
 		--gray-tertiary: 203, 22%, 21%;
 	

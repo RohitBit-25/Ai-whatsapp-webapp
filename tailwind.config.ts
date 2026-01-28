@@ -55,9 +55,9 @@ const config = {
 				"gray-tertiary": "hsl(var(--gray-tertiary))",
 				"left-panel": "hsl(var(--left-panel))",
 				"chat-hover": "hsl(var(--chat-hover))",
-				"green-primary": "hsl(var(--green-primary))",
-				"green-secondary": "hsl(var(--green-secondary))",
-				"green-chat": "hsl(var(--green-chat))",
+				"brand-primary": "hsl(var(--brand-primary))",
+				"brand-secondary": "hsl(var(--brand-secondary))",
+				"brand-chat": "hsl(var(--brand-chat))",
 			},
 			backgroundImage: {
 				"chat-tile-light": "url('/bg-light.png')",

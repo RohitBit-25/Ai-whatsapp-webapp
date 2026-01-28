@@ -146,7 +146,7 @@ const UserListDialog = () => {
                             key={user._id}
                             className={`flex gap-3 items-center p-2 rounded cursor-pointer active:scale-95 
 								transition-all ease-in-out duration-300
-							${selectedUsers.includes(user._id) ? "bg-green-primary" : ""}`}
+							${selectedUsers.includes(user._id) ? "bg-brand-primary" : ""}`}
                             onClick={() => {
                                 if (selectedUsers.includes(user._id)) {
                                     setSelectedUsers(selectedUsers.filter((id) => id !== user._id));
