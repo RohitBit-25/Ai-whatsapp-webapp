@@ -1,63 +1,41 @@
-# WhatsApp Clone
+# Nexus | Connect Freely
 
-A full-featured WhatsApp clone built with the latest web technologies, featuring real-time messaging, AI chat integration, and video calling capabilities.
-
+![Nexus Badge](https://img.shields.io/badge/Status-Online-cyan)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![Convex](https://img.shields.io/badge/Convex-Backend-orange)
 ![Clerk](https://img.shields.io/badge/Clerk-Auth-blue)
 ![ZegoCloud](https://img.shields.io/badge/ZegoCloud-Video_Call-green)
-![OpenAI](https://img.shields.io/badge/OpenAI-AI-412991)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
 
-## 🚀 Key Features
+**Nexus** is a next-generation messaging platform designed for speed, security, and seamless connectivity. Built with a modern, futuristic aesthetic, it serves as the central hub for all your conversations.
 
-*   **Real-time Messaging**: Instant text, image, and video messages powered by **Convex**.
-*   **AI Integration**:
-    *   **Chatbot**: Interact with a GPT-3.5 powered bot in chats.
-    *   **Image Generation**: Generate images using DALL-E 3 directly within the chat.
-*   **Video & Voice Calls**: High-quality video and voice calls using **ZegoCloud**.
-*   **Authentication**: Secure user authentication via **Clerk**.
-*   **Online Status**: Real-time user presence indicators.
-*   **Group Chats**: Create and manage group conversations.
-*   **Responsive UI**: Modern interface built with **Shadcn UI** and **Tailwind CSS**.
-*   **Themes**: Light and dark mode support.
+## 🌌 Features
 
-## 🛠️ Tech Stack
+*   **⚡ Instant Messaging**: Powered by **Convex** for real-time, low-latency performance.
+*   **🤖 Nexus AI**: Integrated smart assistant for chat summaries, translations, and image generation (DALL-E 3).
+*   **🎥 Crystal Clear Calls**: High-definition video and voice calling via **ZegoCloud**.
+*   **🔐 Secure Access**: Enterprise-grade authentication with **Clerk**.
+*   **🎨 Deep Space Theme**: A stunning "Deep Space & Cyan" dark mode designed for focus and clarity.
+*   **📱 Responsive Design**: Fully responsive UI built with **Shadcn UI** and **Tailwind CSS**.
 
-*   **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
-*   **Backend & DB**: [Convex](https://www.convex.dev/)
-*   **Auth**: [Clerk](https://clerk.com/)
-*   **Video Calls**: [ZegoCloud](https://www.zegocloud.com/)
-*   **AI**: [OpenAI API](https://openai.com/) (GPT-3.5 & DALL-E)
-*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
-*   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+## 🚀 Tech Stack
 
-## ⚙️ Prerequisites
+*   **Frontend**: Next.js 14 (App Router), React, Tailwind CSS
+*   **Backend**: Convex (Real-time DB & Functions)
+*   **Auth**: Clerk
+*   **Media**: ZegoCloud (WebRTC)
+*   **AI**: OpenAI API
 
-*   [Node.js](https://nodejs.org/) (v18 or later)
-*   npm, yarn, pnpm, or bun
+## 🛠️ Getting Started
 
-## 🏁 Getting Started
-
-### 1. Clone the repository
-
+### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/whatsapp-clone.git
-cd whatsapp
-```
-
-### 2. Install dependencies
-
-```bash
+git clone https://github.com/your-username/nexus.git
+cd nexus
 npm install
-# or
-yarn install
 ```
 
-### 3. Setup Environment Variables
-
-Create a `.env.local` file in the root directory and populate it with the following keys:
-
+### 2. Environment Setup
+Create a `.env.local` file:
 ```env
 # Convex
 CONVEX_DEPLOYMENT=
@@ -75,36 +53,16 @@ ZEGO_APP_ID=
 ZEGO_SERVER_SECRET=
 ```
 
-### 4. Start Convex
-
-Run the Convex development server to sync your schema and functions.
-
+### 3. Launch Nexus
 ```bash
+# Start backend
 npx convex dev
-```
 
-### 5. Run the Application
-
-In a new terminal window, start the Next.js development server.
-
-```bash
+# Start frontend
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to use the app.
-
-## 📂 Project Structure
-
-*   `/src/app`: Next.js App Router pages and layouts.
-*   `/src/components`: Reusable UI components.
-*   `/convex`: Backend functions (API), schema, and actions (OpenAI).
-*   `/src/providers`: Application providers (Theme, ConvexClient).
-*   `/src/store`: Global state management with Zustand.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Visit `http://localhost:3000` to enter the Nexus.
 
 ## 📄 License
-
-This project is licensed under the MIT License.
+MIT License.
